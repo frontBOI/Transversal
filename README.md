@@ -10,7 +10,7 @@ Projet transversal à la super école CPE Lyon
 |---------------|:----------:|
 |Tom BLANCHET   |Ancestrale  |
 |Lucas PHILIPPE |A déterminer|
-|Antoine GAMAIN |A déterminer|
+|Antoine GAMAIN |Pain au lait|
 |Léo MEYNET     |A déterminer|
 
 > CPE Lyon, une école d'excellence (personne n'a dit ça)
