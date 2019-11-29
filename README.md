@@ -1,8 +1,6 @@
 <img src="https://picsum.photos/id/1040/4496/3000"
      alt="Super image de qualité"
-     style="float: right; height: 200px;" />
-     
-![](https://picsum.photos/id/1040/4496/3000 =200x)
+     style="width: 200px;" />
 
 # Projet transversal
 Projet transversal à la super école CPE Lyon
