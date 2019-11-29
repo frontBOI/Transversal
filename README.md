@@ -1,11 +1,26 @@
-# Transversal
+<img src="https://picsum.photos/id/1018/3914/2935"
+     alt="Super image de qualité"
+     style="margin: 0 auto; width: 90%;" />
+
+# Projet transversal
 Projet transversal à la super école CPE Lyon
 
-# L'équipe
-Tom BLANCHET
-Lucas PHILIPPE
-Antoine GAMAIN
-Léo MEYNET
+## L'équipe, hommes d'envergure
+| Nom           | Puissance  |
+|---------------|:----------:|
+|Tom BLANCHET   |Ancestrale  |
+|Lucas PHILIPPE |A déterminer|
+|Antoine GAMAIN |A déterminer|
+|Léo MEYNET     |A déterminer|
 
-# Le projet
-Ce projet consiste à simuler des incendies sur une ville, et leur prise en charge par les flottes d’urgence qui vont intervenir. 
+> 
+
+## Le projet
+Ce projet consiste à *simuler des incendies* sur une ville, et leur prise en charge par les flottes d’urgence qui vont intervenir. 
+
+## Les technologies
+Afin de mener à bien ce projet, voici les différentes technologies imposées par l'équipe pédagogique:
+- **GNS 3** (réseau)
+- La triade sacrée *HTML/CSS/Javascript* (Web)
+- **C** (IoT)
+- **Java** (pour la partie Java tu coco)
