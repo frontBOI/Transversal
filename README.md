@@ -24,3 +24,4 @@ Afin de mener à bien ce projet, voici les différentes technologies imposées p
 - La triade sacrée *HTML/CSS/Javascript* (Web)
 - **C** (IoT)
 - **Java** (pour la partie Java tu coco)
+- **Python & Flask** (côté serveur)
