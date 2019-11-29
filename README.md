@@ -1,6 +1,6 @@
 <img src="https://picsum.photos/id/1040/4496/3000"
      alt="Super image de qualité"
-     style="margin: 0 auto; width: 90%; height: 200px;" />
+     style="float: right; height: 200px;" />
 
 # Projet transversal
 Projet transversal à la super école CPE Lyon
@@ -13,7 +13,7 @@ Projet transversal à la super école CPE Lyon
 |Antoine GAMAIN |A déterminer|
 |Léo MEYNET     |A déterminer|
 
-> 
+> CPE Lyon, une école d'excellence (personne n'a dit ça)
 
 ## Le projet
 Ce projet consiste à *simuler des incendies* sur une ville, et leur prise en charge par les flottes d’urgence qui vont intervenir. 
