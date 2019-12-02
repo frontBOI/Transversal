@@ -13,6 +13,9 @@ Activer cet environnement (et accéder à son interface de configuration)
 A partir de ce moment, on entre dans l'environnement et on peut installer flask
 (venv) $ pip install flask
 
+Pour communiquer avec PostgreSQL, nous avons besoin de deux dépendances: SQLAlchemy et Psycopg2
+(venv) $ pip install flask-sqlalchemy psycopg2
+
 Maintenant, sortir de l'environnement virtuel et entrer le nom du fichier de l'application (ici, app.py)
 > set FLASK_APP=app.py
 

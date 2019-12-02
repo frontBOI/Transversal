@@ -13,16 +13,36 @@
 	<!-- <link rel="icon" href="../../img/icon.png"> -->
 
 	<!-- EMBED STYLE SHEET -->
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin=""/>
 </head>
 
 <body>
 
-    <div id='header'>
+    <header id='header'>
+        <p class='title'>Hydropute</p>
+    </header>
+
+    <div id='content'>
+        <p>Salut nous sommes dans le body c'est super</p>
+
+        <!-- Leaflet map -->
+        <div id="leafletMap"></div>
     </div>
+
+    <footer>
+        <p id='footerText'>Réalisé par Tom BLANCHET©</p>
+    </footer>
     
-    <p>Salut nous sommes dans le body c'est super</p>
-    
-    <script type='text/javascript' scr='script/script.js'></script>
+    <!-- Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+
+    <script type='text/javascript' src='script/script.js'></script>
 </body>
 </html>
