@@ -1,0 +1,30 @@
+
+body{
+	background-color: black;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+.center{
+	text-align: center;
+	margin: 0 auto;
+}
+
+.unselectable {
+	/* no selection possible */
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none;   /* Safari */
+	-khtml-user-select: none;    /* Konqueror HTML */
+	-moz-user-select: none;      /* Firefox */
+	-ms-user-select: none;       /* Internet Explorer/Edge */
+	user-select: none;           /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+#header {
+    width: 100vw;
+    max-width: 100vw;
+
+    height: 100px;
+    background-color: rgba(192, 57, 43, .7);
+}
