@@ -67,13 +67,15 @@ footer {
 	max-width: 90vw;
 
 	padding: 20px;
-	height: 50vh;
 
 	background-color: rgba(128, 128, 128, .2);
 }
 
 
 #leafletMap {
-	width: 90%;
-	height: 200px;
+	display: inline-block;
+	width: 100%;
+	height: 350px;
+
+	border: 1px solid white;
 }

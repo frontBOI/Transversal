@@ -13,8 +13,8 @@ Activer cet environnement (et accéder à son interface de configuration)
 A partir de ce moment, on entre dans l'environnement et on peut installer flask
 (venv) $ pip install flask
 
-Pour communiquer avec PostgreSQL, nous avons besoin de trois dépendances: SQLAlchemy, Psycopg2 et CORS (tu coco)
-(venv) $ pip install flask-sqlalchemy psycopg2 flask-cors
+Pour communiquer avec PostgreSQL, nous avons besoin de plusieurs dépendances: SQLAlchemy, Psycopg2, CORS, requests
+(venv) $ pip install flask-sqlalchemy psycopg2 flask-cors requests
 
 Maintenant, sortir de l'environnement virtuel et entrer le nom du fichier de l'application (ici, app.py)
 > set FLASK_APP=app.py
