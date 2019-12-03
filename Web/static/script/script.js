@@ -1,7 +1,20 @@
 
 const IMG_PATH = '../img/';
 let locationsCoordinates = [];
-let renderedMarkers = [];
+let renderedMarkers = {
+    fireMarkers: {
+        areShown: true,
+        markers: []
+    },
+    buildingMarker: {
+        areShown: true,
+        markers: []
+    },
+    truckMarkers: {
+        areShown: true,
+        markers: []
+    }
+};
 let renderedPolylines = [];
 
 // --------------------------------------------------------------------------------------------------------------
@@ -66,7 +79,16 @@ function setupLeaflet ()
             container.style.backgroundSize = "30px 30px";
         
             container.onclick = function(){
-                console.log('Toggling fires...');
+                const areMarkersShown = renderedMarkers.fireMarkers.areShown;
+                for (let marker of renderedMarkers.fireMarkers.markers) {
+                    if (areMarkersShown) {
+                        renderedMarkers.fireMarkers.areShown = false;
+                        mymap.removeLayer(marker)
+                    } else {
+                        renderedMarkers.fireMarkers.areShown = true;
+                        mymap.addLayer(marker)
+                    }
+                }
             }
             return container;
         }
@@ -88,7 +110,16 @@ function setupLeaflet ()
             container.style.backgroundSize = "30px 30px";
         
             container.onclick = function(){
-                console.log('Toggling trucks....');
+                const areMarkersShown = renderedMarkers.truckMarkers.areShown;
+                for (let marker of renderedMarkers.truckMarkers.markers) {
+                    if (areMarkersShown) {
+                        renderedMarkers.truckMarkers.areShown = false;
+                        mymap.removeLayer(marker)
+                    } else {
+                        renderedMarkers.truckMarkers.areShown = true;
+                        mymap.addLayer(marker)
+                    }
+                }
             }
             return container;
         }
@@ -153,7 +184,7 @@ function addIdleMarker (coordinates, mymap) {
         popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
     });
     let marker = L.marker(coordinates, {icon: idleMarkerIcon}).addTo(mymap);
-    renderedMarkers.push(marker);
+    renderedMarkers.buildingMarker.markers.push(marker);
 }
 
 
@@ -182,7 +213,7 @@ function addFireMarker (coordinates, intensity, mymap)
         popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
     });
     let marker = L.marker(coordinates, {icon: fireIcon}).addTo(mymap);
-    renderedMarkers.push(marker);
+    renderedMarkers.fireMarkers.markers.push(marker);
 }
 
 
@@ -198,7 +229,7 @@ function addFirestationMarker (coordinates, mymap) {
         popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
     });
     let marker = L.marker(coordinates, {icon: firestation}).addTo(mymap);
-    renderedMarkers.push(marker);
+    renderedMarkers.buildingMarker.markers.push(marker);
 }
 
 
@@ -238,8 +269,8 @@ function addMovingFiretruck (steps, duration, mymap)
     // adding start & end markers
     let startMarker = L.marker(coordinateArray[0], {icon: firestationIcon}).addTo(mymap);
     let endMarker = L.marker(coordinateArray[coordinateArray.length - 1], {icon: fireIcon}).addTo(mymap);
-    renderedMarkers.push(startMarker);
-    renderedMarkers.push(endMarker);
+    renderedMarkers.buildingMarker.markers.push(startMarker);
+    renderedMarkers.fireMarkers.markers.push(endMarker);
 
     // here is the moving marker (6 seconds animation)
     let myMovingMarker = L.Marker.movingMarker(
@@ -251,7 +282,7 @@ function addMovingFiretruck (steps, duration, mymap)
         }
     );
     mymap.addLayer(myMovingMarker);
-    renderedMarkers.push(myMovingMarker);
+    renderedMarkers.truckMarkers.markers.push(myMovingMarker);
     myMovingMarker.start();
 }
 
@@ -306,9 +337,12 @@ async function async_gatherDataRegularly (delay, mymap) {
 // @brief
 //  Clears all the markers rendered in the Leaflet map 'mymap'
 function clearAllMarkers (mymap) {
-    for (let marker of renderedMarkers) {
+    for (let marker of renderedMarkers.fireMarkers.markers)
         mymap.removeLayer(marker);
-    }
+    for (let marker of renderedMarkers.buildingMarker.markers)
+        mymap.removeLayer(marker);
+    for (let marker of renderedMarkers.truckMarkers.markers)
+        mymap.removeLayer(marker);
 }
 
 
