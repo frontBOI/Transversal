@@ -3,6 +3,8 @@ body{
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
+
+	font-family: 'Pontano Sans', sans-serif;
 }
 
 .center{
@@ -62,11 +64,9 @@ footer {
 /* ================================================================================================ */
 
 #content {
-	margin: 10px auto;
-	width: 90vw;
-	max-width: 90vw;
-
-	padding: 20px;
+	margin: 0 auto;
+	width: 99vw;
+	max-width: 99vw;
 
 	background-color: rgba(128, 128, 128, .2);
 }
@@ -75,7 +75,22 @@ footer {
 #leafletMap {
 	display: inline-block;
 	width: 100%;
-	height: 350px;
+	height: 450px;
 
 	border: 1px solid white;
+}
+
+.leaflet-control-hide-fire, .leaflet-control-hide-truck {
+	position: absolute;
+	top: 0;
+	right: 10px;
+	cursor: pointer !important;
+}
+
+.leaflet-control-hide-fire {
+	/* ... */
+}
+
+.leaflet-control-hide-truck {
+	/* ... */
 }

@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () =>
     locationsCoordinates = [];
 
     let mymap = setupLeaflet();
-    fetchAndDisplayIncendie(mymap); // fetch first set of data
+    // fetchAndDisplayIncendie(mymap); // fetch first set of data
     //async_gatherDataRegularly(5000, mymap);
 });
 
@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', () =>
 //  Initializes and sets up the Leaflet map. This function returns the initialized Leaflet map
 // @source
 //   https://github.com/ewoken/Leaflet.MovingMarker
-function setupLeaflet () {
+function setupLeaflet () 
+{
     var mymap = L.map('leafletMap').setView(
         [45.74846, 4.84671], // Lyon's geographical coordinates
         11 // zoom level
@@ -42,13 +43,59 @@ function setupLeaflet () {
         }
     ).addTo(mymap);
 
-    var circle = L.circle([45.74846, 4.84671], {
-        color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5,
-        radius: 500
-    }).addTo(mymap);
+    // var circle = L.circle([45.74846, 4.84671], {
+    //     color: 'red',
+    //     fillColor: '#f03',
+    //     fillOpacity: 0.5,
+    //     radius: 500
+    // }).addTo(mymap);
 
+    // add controls to the map
+    const customControl_hideFire = L.Control.extend({
+        options: {
+            position: 'topright'
+        },
+
+        onAdd: function(map) {
+            let container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-hide-fire');
+            container.style.backgroundColor = 'white';
+            container.style.width = '30px';
+            container.style.height = '30px';
+            
+            container.style.backgroundImage = 'url("' + IMG_PATH + 'fire/fire1.gif")';
+            container.style.backgroundSize = "30px 30px";
+        
+            container.onclick = function(){
+                console.log('Toggling fires...');
+            }
+            return container;
+        }
+    });
+    mymap.addControl(new customControl_hideFire);
+
+    const customControl_hideTruck = L.Control.extend({
+        options: {
+            position: 'topright'
+        },
+
+        onAdd: function(map) {
+            let container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-hide-truck');
+            container.style.backgroundColor = 'white';
+            container.style.width = '30px';
+            container.style.height = '30px';
+            
+            container.style.backgroundImage = 'url("' + IMG_PATH + 'camion.gif")';
+            container.style.backgroundSize = "30px 30px";
+        
+            container.onclick = function(){
+                console.log('Toggling trucks....');
+            }
+            return container;
+        }
+    });
+    mymap.addControl(new customControl_hideTruck);
+
+    // test
     const start = [45.54846, 4.84671];
     const end = [45.94846, 4.84671];
     fetchAndDisplayRoute(start, end, mymap);
@@ -176,7 +223,7 @@ function addMovingFiretruck (steps, duration, mymap)
     });
 
     const fireIcon = L.icon({
-        iconUrl: IMG_PATH + 'fire.gif',
+        iconUrl: IMG_PATH + 'fire/fire1.gif',
         iconSize:     [60, 90], // size of the icon
         iconAnchor:   [30, 70], // point of the icon which will correspond to marker's location
         popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
