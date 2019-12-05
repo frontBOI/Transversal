@@ -273,7 +273,7 @@ function addMovingFiretruck (steps, duration, mymap)
     renderedMarkers.fireMarkers.markers.push(endMarker);
 
     // here is the moving marker (6 seconds animation)
-    let myMovingMarker = L.Marker.movingMarker(
+    let movingFiretruck = L.Marker.movingMarker(
         coordinateArray, 
         duration, 
         { 
@@ -281,9 +281,15 @@ function addMovingFiretruck (steps, duration, mymap)
             icon: movingMarkerIcon
         }
     );
-    mymap.addLayer(myMovingMarker);
-    renderedMarkers.truckMarkers.markers.push(myMovingMarker);
-    myMovingMarker.start();
+
+    // on arrival tu coco
+    movingFiretruck.addEventListener('end', () => {
+        console.log('ze sui arrivé')
+    })
+
+    mymap.addLayer(movingFiretruck);
+    renderedMarkers.truckMarkers.markers.push(movingFiretruck);
+    movingFiretruck.start();
 }
 
 
