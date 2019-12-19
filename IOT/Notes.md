@@ -16,3 +16,7 @@ Le programme python envois ```(X,Y,intensité)``` à la carte.
 
 https://emergencymanager.azurewebsites.net/fire/send  
 https://cpefiresimulation.azurewebsites.net/get
+
+# Format paquet
+
+[taillePacket, @dest, @src, idPacket, data]
